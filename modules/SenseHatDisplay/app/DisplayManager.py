@@ -91,6 +91,36 @@ class DisplayManager(object):
         ]
         return logo
 
+    def __up(self):
+        G = Colors.Green.value
+        N = Colors.Nothing.value
+        logo = [
+        N, N, N, G, G, N, N, N,
+        N, N, G, G, G, G, N, N,
+        N, G, G, G, G, G, G, N,
+        G, G, G, G, G, G, G, G,
+        N, N, N, G, G, N, N, N,
+        N, N, N, G, G, N, N, N,
+        N, N, N, G, G, N, N, N,
+        N, N, N, G, G, N, N, N,
+        ]
+        return logo
+
+    def __down(self):
+        R = Colors.Red.value
+        N = Colors.Nothing.value
+        logo = [
+        N, N, N, R, R, N, N, N,
+        N, N, N, R, R, N, N, N,
+        N, N, N, R, R, N, N, N,
+        N, N, N, R, R, N, N, N,
+        R, R, R, R, R, R, R, R,
+        N, R, R, R, R, R, R, N,
+        N, N, R, R, R, R, N, N,
+        N, N, N, R, R, N, N, N,
+        ]
+        return logo
+
     def __unknown(self):
         N = Colors.Nothing.value
         R = Colors.Red.value
@@ -128,6 +158,10 @@ class DisplayManager(object):
             self.__displayImage(self.__orange())
         elif 'lemon' in strImage.lower():
             self.__displayImage(self.__lemon())
+        elif 'up' in strImage.lower():
+            self.__displayImage(self.__up())
+        elif 'down' in strImage.lower():
+            self.__displayImage(self.__down())
         elif 'none' in strImage.lower():
             self.s.clear()
         else:

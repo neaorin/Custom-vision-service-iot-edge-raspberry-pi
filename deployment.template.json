@@ -68,7 +68,7 @@
             "restartPolicy": "always",
             "settings": {
               "image": "${MODULES.ImageClassifierService.arm32v7}",
-              "createOptions": ""
+              "createOptions": "{\"Env\":[\"MODEL_FOLDER=lego position model\"]}"
             }
           }
         }

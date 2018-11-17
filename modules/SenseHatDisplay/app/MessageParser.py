@@ -1,10 +1,11 @@
 class MessageParser:
     #Returns the highest probablity tag in the json object (takes the output as json.loads as input)
-    def highestProbabilityTagMeetingThreshold(self, allTagsAndProbability, threshold):
+    def highestProbabilityTagMeetingThreshold(self, predictionResult, threshold):
         highestProbabilityTag = 'none'
         highestProbability = 0
+        allTagsAndProbability = predictionResult['predictions']
         for item in allTagsAndProbability:
-            if item['Probability'] > highestProbability and item['Probability'] > threshold:
-                highestProbability = item['Probability']
-                highestProbabilityTag = item['Tag']
+            if item['probability'] > highestProbability and item['probability'] > threshold:
+                highestProbability = item['probability']
+                highestProbabilityTag = item['tagName']
         return highestProbabilityTag
